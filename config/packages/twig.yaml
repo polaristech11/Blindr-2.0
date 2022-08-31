@@ -1,0 +1,12 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals: 
+        contact_adress: '23 Rue Jules Valles, Choisy-le-Roi, France'
+        contact_phone: '+33 768 999 148'
+        contact_hours: '08:00 - 18:00, Mon-Sat'
+        contact_email: 'santosmicael663@gmail.com'
+
+
+when@test:
+    twig:
+        strict_variables: true
