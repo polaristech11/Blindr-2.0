@@ -165,7 +165,7 @@ body {
 }
 
 #hero button {
-    background-image: url("img/button.png");
+    background-image: url("../img/button.png");
     background-color: transparent;
     color: #088178;
     border: 0;
@@ -568,7 +568,7 @@ footer a:hover {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-image: url("img/banner/b1.jpg");
+    background-image: url("../img/banner/b1.jpg");
     background-size: cover;
     padding: 14px;
 }
@@ -667,7 +667,7 @@ footer a:hover {
 }
 
 #page-header.blog-header {
-    background-image: url("img/banner/b19.jpg");
+    background-image: url("../img/banner/b19.jpg");
 }
 
 #blog .blog-box {
@@ -735,7 +735,7 @@ footer a:hover {
 /* About Page */
 
 #page-header.about-header {
-    background-image: url("img/about/banner.png");
+    background-image: url("../img/about/banner.png");
 }
 
 #about-head {

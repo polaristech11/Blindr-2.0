@@ -1,0 +1,77 @@
+{% extends 'registration.html.twig' %}
+
+{% block description %}Create your account in Blindr 2.0 -{% endblock %}
+
+
+{% block h1 %}Connection{% endblock %}
+
+{% block body %}
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    {{ form_start(registrationForm) }}
+
+        <div class="row">
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4 offset-lg-2">
+                {{ form_row(registrationForm.first_name, {
+                    label: 'Name'
+                }) }}
+            </div>
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4">
+                {{ form_row(registrationForm.last_name, {
+                    label: 'Last Name'
+                }) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4 offset-lg-2">
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+                    
+            </div>
+
+        </div class="row">
+        <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4 offset-lg-2">
+            {{ form_row(registrationForm.pays, {
+                label:'pays'
+            })}}
+        
+        </div> 
+
+        <div class="row">
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4 offset-lg-2">
+                {{ form_row(registrationForm.email) }}
+            </div>
+            <div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-4">
+                {{ form_row(registrationForm.phone, {
+                    label: 'Phone'
+                }) }}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-10 offset-1 offset-md-0 col-lg-8 offset-lg-2">
+                {{ form_row(registrationForm.agreeTerms, {
+                    'label': 'I accept the terms and conditions'
+                }) }}
+            </div>
+        </div>
+
+        <div class="row text-end mt-3">
+            <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-8 offset-lg-2">
+                <a href="{{ path('home') }}" class="btn btn-outline-danger me-3">Cancel</a>
+                <button type="submit" class="btn btn-success">Sign Up</button>
+            </div>
+        </div>
+
+    {{ form_end(registrationForm) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/register.js') }}"></script>
+{% endblock %}

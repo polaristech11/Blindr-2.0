@@ -6,13 +6,12 @@
 
     <h1 class="pb-5">List of Products</h1>
 
-    <table class="table table-hover table-sm texxt-center align-middle text-center">
+    <table class="table table-hover table-sm text-center align-middle text-center">
         <thead>
             <tr>
                 <th>N°</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Catégorie</th>
+                <th>Name</th>
+                <th>Price</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,7 +19,7 @@
             {% for product in products|reverse %}
                 <tr>
                     <td>{{ loop.revindex }}</td>
-                    <td class="text-start"><img src="{{ asset('img/product/' ~ product.img1) }}" alt="image principale du jeu {{ product.name }}" class="pe-3"> {{ product.name }}</td>
+                    <td class="text-start"><img src="{{ asset('img/products/' ~ product.img) }}" alt="Principal Image of Product {{ product.name }}" class="pe-3"> {{ product.name }}</td>
                     <td>{{ product.price|number_format(2, ',', ' ') }} €</td>
                     <td>
                         <a href="{{ path('product_update', {'id': product.id}) }}"><i class="bi bi-pencil-square text-primary"></i></a>
@@ -32,7 +31,7 @@
     </table>
 
     <div class="text-end mt-4">
-        <a href="{{ path('product_create') }}" class="btn btn-success">Ajouter un produit</a>
+        <a href="{{ path('product_create') }}" class="btn btn-success">Add a Product</a>
     </div>
     
 {% endblock %}

@@ -38,20 +38,27 @@
 
         <main class="container-fluid">
             <div class="row">
-                <div class="col-1 bg-secondary">
+                <div class="col-1 bg-dark text-center">
                     <nav>
                         <ul class="pt-3">
-                            <li class="py-2"><a href="{{ path('admin') }}" class="text-light" title="Admin Space"><i class="bi bi-house fs-4"></i></a></li>
-                            <li class="py-2"><a href="{{ path('admin_products') }}" class="text-light" title="Products"><i class="bi bi-dice-5 fs-4"></i></a></li>
-                            <li class="py-2"><a href="#" class="text-light" title="Category"><i class="bi bi-tags fs-4"></i></a></li>
-                            <li class="py-2"><a href="#" class="text-light" title="Users"><i class="bi bi-people fs-4"></i></a></li>
-                            <li class="py-2"><a href="{{ path('home') }}" class="text-light" title="Home Site"><i class="bi bi-house fs-4"></i></a></li>
-                            <li class="py-2"><a href="#" class="text-light" title="Deconnexion"><i class="bi bi-door-open fs-4"></i></a></li>
+                            <li class="py-2"><a href="{{ path('admin') }}" class="text-light" title="Admin Space"><i class="bi bi-person"></i></i></a></li>
+                            <li class="py-2"><a href="{{ path('admin_products') }}" class="text-light" title="Products"><i class="bi bi-shop"></i></i></i></a></li>
+                            <li class="py-2"><a href="#" class="text-light" title="Category"><i class="bi bi-bookmarks"></i></i></a></li>
+                            <li class="py-2"><a href="#" class="text-light" title="Users"><i class="bi bi-person-badge"></i></i></a></li>
+                            <li class="py-2"><a href="{{ path('home') }}" class="text-light" title="Home Site"><i class="bi bi-house-door"></i></i></a></li>
+                            <li class="py-2"><a href="#" class="text-light" title="Sign-Out"><i class="bi bi-door-open"></i></i></a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-11">
                     <div class="row p-5">
+                        {% for label, messages in app.flashes %}
+                            {% for message in messages %}
+                                <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded mb-5">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
                         {% block body %}{% endblock %}
                     </div>
                 </div>
